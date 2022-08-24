@@ -1,0 +1,58 @@
+// grid
+@mixin col {
+  display: flex;
+  flex-wrap: wrap;
+  & > * {
+    box-sizing: border-box;
+  }
+}
+
+@mixin col-6 {
+  @include col;
+  & > * {
+    width: 16.66%;
+  }
+}
+
+@mixin col-5 {
+  @include col;
+  & > * {
+    width: 20%;
+  }
+}
+
+@mixin col-4 {
+  @include col;
+  & > * {
+    width: 25%;
+  }
+}
+
+@mixin col-3 {
+  @include col;
+  & > * {
+    width: 33.33%;
+  }
+}
+
+@mixin col-2 {
+  @include col;
+  & > * {
+    width: 50%;
+  }
+}
+
+@mixin col-1 {
+  & > * {
+    width: 100%;
+  }
+}
+
+// rake
+@mixin rake($number) {
+  margin: -$number;
+  & > * {
+    padding: $number;
+  }
+}
+

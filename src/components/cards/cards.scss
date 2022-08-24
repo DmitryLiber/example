@@ -1,0 +1,4 @@
+.cards {
+  @include col-4;
+  @include rake(20px);
+}

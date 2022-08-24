@@ -1,0 +1,109 @@
+$font: 'Ubuntu';
+$color-text: #000;
+
+@font-face {
+  font-family: $font;
+  src: url('~fonts/Ubuntu-Regular.woff2') format('woff2'),
+  url('~fonts/Ubuntu-Regular.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: $font;
+  src: url('~fonts/Ubuntu-Medium.woff2') format('woff2'),
+  url('~fonts/Ubuntu-Medium.woff') format('woff');
+  font-weight: 500;
+}
+@font-face {
+  font-family: $font;
+  src: url('~fonts/Ubuntu-Bold.woff2') format('woff2'),
+  url('~fonts/Ubuntu-Bold.woff') format('woff');
+  font-weight: 700;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  color: #3e3e3e;
+  font-size: 18px;
+  font-weight: 400;
+  overflow-y: scroll;
+}
+
+h1,
+h2,
+h3,
+h4,
+b,
+strong {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: $color-text;
+}
+
+p {
+  line-height: 25px;
+  margin: 8px 0 25px 0;
+}
+
+p:last-child {
+  margin: 8px 0 0px 0;
+}
+
+input:not([type='button']):not([type='checkbox']),
+select,
+textarea {
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px 15px;
+
+  outline: none;
+  font-size: 18px;
+  &::placeholder {
+    color: #aaa;
+  }
+
+  &:focus {
+    border: 1px solid #939393;
+  }
+}
+
+input[type='search'] {
+  margin: 30px 0 40px 0;
+  font-size: 20px;
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+section {
+  padding-bottom: 80px;
+}
+
+.resetul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.content {
+  flex-grow: 1;
+}

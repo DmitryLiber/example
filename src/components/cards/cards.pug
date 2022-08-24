@@ -1,0 +1,10 @@
+mixin cards()
+  .cards
+    -for(let i = 0;i < 6;i++){
+    .cards__item.card
+      h3
+        | Товар 
+        =i+1
+      .card__title
+      button.btn Подробнее
+    -}
