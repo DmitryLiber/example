@@ -2,3 +2,30 @@
   @include col-4;
   @include rake(20px);
 }
+
+.card{
+  background-color: #fff;
+  color: #3e3e3e;
+  padding: 15px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+
+@media only screen and (max-width:1023px){
+  .cards {
+    @include col-3;
+  }
+}
+
+@media only screen and (max-width:800px){
+  .cards {
+    @include col-2;
+  }
+}
+
+@media only screen and (max-width:500px){
+  .cards {
+    @include col-1;
+  }
+}

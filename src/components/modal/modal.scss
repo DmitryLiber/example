@@ -32,6 +32,7 @@
     align-items: center;
     min-height: 100%;
     width: 100%;
+    overflow-y: scroll;
   }
 
   &_show {
@@ -52,7 +53,10 @@
   display: grid;
   place-items: center;
   cursor: pointer;
+  background-color: transparent;
+  border: 0;
   transition: 0.2s;
+  will-change: transform;
 
   &:after,
   &:before {
@@ -73,6 +77,13 @@
   }
   &:hover {
     transform: scale(1.1);
+  }
+
+  &_black{
+    &:after,
+    &:before {
+      background-color: #3e3e3e;
+    }
   }
 }
 

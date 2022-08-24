@@ -2,8 +2,9 @@ export default class Modal {
   constructor() {
     this.count = 0
     this.afterClosed = ''
+    this.afterOpen = ''
     this.hiding = false
-    this.scrollWidth = ''
+    this.scrollWidth = this.scrollWidthUpdate()
     this.cross = true
     this.init()
   }
@@ -12,27 +13,22 @@ export default class Modal {
     $('body').prepend(
       '<div class="checkWidth" style="overflow-y:scroll;height:50px;width:50px;visibility:hidden;"></div>'
     )
+    
+    $(window).on('size', () => scrollWidthUpdate())
 
-    const scrollWidth = setTimeout(() => {
-      this.scrollWidth =
-        $('.checkWidth')[0].offsetWidth - $('.checkWidth')[0].clientWidth
-      $('.checkWidth').remove()
-    }, 10)
-
-    //scrollWidth()
-
-    $(window).on('size', () => {
-      scrollWidth()
-
-      console.log(this.scrollWidth)
-    })
-
-    $(document).on('click', '.modal__closed', () => this.closed())
-    $(document).on('click', '.modal__cross', () => this.closed())
+    $(document).on('click', '.js-modal-closed', () => this.closed())
 
     $(document).on('keyup', (e) => {
       if (e.keyCode === 27) this.closed()
     })
+  }
+
+  scrollWidthUpdate(){
+    setTimeout(() => {
+      this.scrollWidth =
+        $('.checkWidth')[0].offsetWidth - $('.checkWidth')[0].clientWidth
+      $('.checkWidth').remove()
+    }, 10)
   }
 
   cfg(newcfg) {
@@ -61,13 +57,21 @@ export default class Modal {
 
     $('body').prepend(`
     <div class="modal modal${this.count}" style="z-index:${69 + this.count};">
-      ${this.cross ? '<div class="cross modal__cross"></div>' : ''}
+      ${this.cross ? '<div class="cross modal__cross js-modal-closed"></div>' : ''}
       <div class="modal__closed" style="right:${this.scrollWidth}px;"></div>
       <div class="modal__body">${body}</div>
     </div>
     `)
 
-    setTimeout(() => $('.modal' + this.count).addClass('modal_show'), 0)
+    setTimeout(() => {
+      $('.modal' + this.count).addClass('modal_show')
+
+      if (this.afterOpen.length < 1) return
+
+      this.afterOpen[1] === undefined
+        ? this.afterOpen[0]()
+        : this.afterOpen[0](this.afterOpen[1])
+    }, 0)
   }
 
   closed() {

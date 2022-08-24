@@ -1,17 +1,28 @@
 .btn {
+  font-weight: 700;
   font-size: 18px;
   background-color: #09098f;
   color: #fff;
   line-height: normal;
+  outline: none;
   border-radius: 10px;
   text-decoration: none;
   border: none;
-  padding: 10px 17px;
+  padding: 15px 20px;
   display: inline-block;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.3s;
 
   &:hover {
-    background-color: #5644e1;
+    background-color: #333395;
+  }
+
+  &_white{
+    background-color: #fff;
+    color: #3e3e3e;
+
+    &:hover{
+      background-color:#e3e3e3;
+    }
   }
 }

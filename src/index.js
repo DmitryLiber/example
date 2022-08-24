@@ -8,6 +8,6 @@ import FormFeedBack from 'components/forms/feedback'
 const modal = new Modal()
 
 $(document).ready(() => {
-  //console.log(common.forms.feedback)
   FormFeedBack(modal, common.forms.feedback)
+  Cards(modal)
 })

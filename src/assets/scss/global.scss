@@ -30,7 +30,8 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  color: #3e3e3e;
+  color: #fff;
+  background-color: rgb(33, 33, 78);
   font-size: 18px;
   font-weight: 400;
   overflow-y: scroll;
@@ -42,7 +43,7 @@ h3,
 h4,
 b,
 strong {
-  font-weight: 700;
+  font-weight: 800;
 }
 
 a {
@@ -89,7 +90,7 @@ input[type='search'] {
 }
 
 section {
-  padding-bottom: 80px;
+  padding-bottom: 50px;
 }
 
 .resetul {
@@ -106,4 +107,13 @@ section {
 
 .content {
   flex-grow: 1;
+}
+
+
+@media only screen and (max-width:1225px){
+  .container {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }

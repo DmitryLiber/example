@@ -2,24 +2,11 @@ include ~components/header/header
 include ~components/cards/cards
 include ~components/footer/footer
 
-doctype html
-html(lang='ru')
-	head
-		//if IE
-			meta(http-equiv='X-UA-Compatible' content='IE=Edge,chrome=1')
-		meta(name="viewport" content="width=device-width, initial-scale=1.0")
-		meta(charset='UTF-8')
-		meta(name='description' content='')
-		title Пример работы
-		script(defer='' src='assets/js/common.js')
-	body
-		+header
-		.content
-			.container
-				section
-					h2 Пример работы
-					button.btn.js-feedback Форма обратной связи
-				section
-					h2 Каталог
-					+cards
-		+footer
++header
+main.content
+	.container
+		section
+			h2 Пример работы
+			button.btn.btn_white.js-feedback Форма обратной связи
+		+cards
++footer
